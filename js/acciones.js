@@ -7,11 +7,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	
-	$('posicion').on('click', function (){
+	$('#posicion').on('click', function (){
 		getPosition ();	
 	});
 	
-	$('#watch').on('clik',function(){
+	$('#watch').on('click',function(){
 		watchPosition ();
 	});
 	
@@ -19,7 +19,7 @@ function onDeviceReady() {
 
    function getPosition(){
 	   var options = {
-		   enebleHighAccuracy : true,
+		   enableHighAccuracy : true,
 		   maximumAge:3600000
 	   }
 	   
@@ -38,7 +38,7 @@ function onDeviceReady() {
 	};
 	
 	function onError(error){
-		alert('code:' +error.code +'\in' + 'message' +error.message+'\n');
+		alert('code:' +error.code +'\in' + 'message:' +error.message+'\n');
 		
 	}
 	
@@ -58,9 +58,9 @@ function onDeviceReady() {
 		   $('#altitud').html(position.coords.altitude);
 		   $('#accuracy').html(position.coords.accuracy);
 		   $('#aaccuracy').html(position.coords.altitudeAccuracy);
-		   $('#headingg').html(position.coords.headingg);
+		   $('#headingg').html(position.coords.heading);
 		   $('#speed').html(position.coords.speed);
-		   $('#timestamp').html(position.coords.timestamp);
+		   $('#timestamp').html(position.timestamp);
 	   };
 	   
 	    function onError(error) {
